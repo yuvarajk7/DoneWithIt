@@ -10,8 +10,9 @@ import ListItemDeleteAction from "../components/ListItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "This is the messages from yuvaraj. How are you?",
+    description:
+      "Throughout this tutorial, we touched on Formik concepts including form state, fields, validation, hooks, render props, and React context. For a more detailed explanation of each of these topics, check out the rest of the documentation. To learn more about defining the components and hooks in the tutorial, check out the API reference.",
     image: Images.mosh,
   },
   {
