@@ -15,6 +15,8 @@ import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -79,17 +81,21 @@ export default function App() {
 
     //<ListingsScreen />
 
-    <Screen>
-      <AppTextInput placeholder="Username" icon="email" />
-      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
-      <AppPicker
-        selectedItem={category}
-        onSelectItem={(item) => setCategory(item)}
-        items={categories}
-        icon="apps"
-        placeholder="Category"
-      />
-      <AppTextInput icon="email" placeholder="Email" />
-    </Screen>
+    // <Screen>
+    //   <AppTextInput placeholder="Username" icon="email" />
+    //   <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
+    //   <AppPicker
+    //     selectedItem={category}
+    //     onSelectItem={(item) => setCategory(item)}
+    //     items={categories}
+    //     icon="apps"
+    //     placeholder="Category"
+    //   />
+    //   <AppTextInput icon="email" placeholder="Email" />
+    // </Screen>
+
+    //<LoginScreen />
+
+    <ListingEditScreen />
   );
 }
