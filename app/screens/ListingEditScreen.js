@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
@@ -45,7 +45,27 @@ const categories = [
 ];
 
 function ListingEditScreen() {
-  const location = useLocation();
+  const [location, setLocation] = useState();
+
+  const getLocation = async () => {
+    try {
+      const { granted } = await Location.requestForegroundPermissionsAsync();
+      //.requestPermissionsAsync();
+      if (!granted) return;
+      const {
+        coords: { latitude, longitude },
+      } = await Location.getCurrentPositionAsync({});
+      setLocation({ latitude, longitude });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  //const location = useLocation();
 
   return (
     <Screen style={styles.container}>
